@@ -18,6 +18,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 //创建路由对象
 const router = new VueRouter({
+  //精确高亮显示样式
+  // https://router.vuejs.org/zh/api/#exact-active-class
+  linkExactActiveClass: 'active',
   //配置路由规则
   routes:[
       {name:'home',path:'/',redirect:'/heroes'},
