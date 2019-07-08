@@ -34,7 +34,7 @@ const router = new VueRouter({
       {name:'equips',path:'/equips',component:EquipsList},
       {name:'heroesadd',path:'/heroes/add',component:HoreAdd},
       //添加动态路由id
-      {name:'heroesedit',path:'/heroes/edit/:id',component:HoreEdit},
+      {name:'heroesedit',path:'/heroes/edit/:id',component:HoreEdit,props:true},
 
   ]
 })

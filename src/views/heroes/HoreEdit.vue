@@ -22,6 +22,8 @@
 //导入axios
 import axios from 'axios'
 export default {
+    //接收外部传来的数据
+    props:['id'],
     data() {
         return {
             //双向绑定数据
@@ -31,8 +33,24 @@ export default {
             }
         }
     },
+    mounted() {
+        this.loadDataById()
+    },
     methods: {
-
+        loadDataById () {
+            axios
+            .get(`http://localhost:3000/heroes/${this.id}`)
+            .then((res)=>{
+                const {data,status} = res
+                console.log(res)
+                if (status===200) {
+                    this.formData=data
+                }
+            })
+            .catch((err)=>{
+                console.log('服务器错误'+err)
+            })
+        }
         
     },
 }
