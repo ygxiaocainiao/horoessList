@@ -5,6 +5,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './assets/css/index.css'
 
 Vue.config.productionTip = false
+// 导入 HoreList 组件
+import HoreList from './views/heroes/HoreList.vue'
 
 // 导入 vue-router
 import VueRouter from 'vue-router'
@@ -14,7 +16,8 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   //配置路由规则
   routes:[
-
+      {name:'home',path:'/',redirect:'heroes'},
+      {name:'heroes',path:'/heroes',component:HoreList},
   ]
 })
 
