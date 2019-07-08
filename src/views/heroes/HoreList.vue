@@ -33,7 +33,7 @@
 
 <script>
 //导入axios
-import axios from 'axios'
+// import axios from 'axios'
 export default {
     data () {
         return {
@@ -48,7 +48,7 @@ export default {
     methods:{
         //发送请求展示应英雄
        loadData () {
-           axios
+           this.axios
            .get('http://localhost:3000/heroes')
            .then((res)=>{
             //    data数据 status http的状态码
@@ -68,7 +68,7 @@ export default {
            if (!confirm('确认删除?')) {
                return
            }
-           axios
+           this.axios
            .delete(`http://localhost:3000/heroes/${id}`)
            .then((res)=>{
                const {status} = res

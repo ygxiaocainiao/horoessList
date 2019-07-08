@@ -20,7 +20,7 @@
 
 <script>
 //导入axios
-import axios from 'axios'
+// import axios from 'axios'
 export default {
     //接收外部传来的数据
     props:['id'],
@@ -38,11 +38,11 @@ export default {
     },
     methods: {
         loadDataById () {
-            axios
+            this.axios
             .get(`http://localhost:3000/heroes/${this.id}`)
             .then((res)=>{
                 const {data,status} = res
-                console.log(res)
+                // console.log(res)
                 if (status===200) {
                     this.formData=data
                 }
@@ -52,7 +52,7 @@ export default {
             })
         },
         edit () {
-           axios
+            this.axios
            .put(`http://localhost:3000/heroes/${this.id}`,this.formData)
            .then((res)=>{
                const {status} = res

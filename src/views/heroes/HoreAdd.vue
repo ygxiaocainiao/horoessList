@@ -19,8 +19,7 @@
 </template>
 
 <script>
-//导入axios
-import axios from 'axios'
+
 export default {
     data() {
         return {
@@ -32,7 +31,7 @@ export default {
     },
     methods: {
         add () {
-            axios
+           this.axios
             .post('http://localhost:3000/heroes',this.formData)
             .then((res)=>{
                 const status = res.status
