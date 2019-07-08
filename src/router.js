@@ -10,6 +10,10 @@ import WeaponsList from './views/weapons/WeaponsList.vue'
 
 //导入 HoreAdd 组件
 import HoreAdd from './views/heroes/HoreAdd.vue'
+//导入 HoreEdit 组件
+import HoreEdit  from './views/heroes/HoreEdit.vue'
+
+
 // 导入 vue-router
 import VueRouter from 'vue-router'
 //配置vue的插件vue-router
@@ -29,6 +33,8 @@ const router = new VueRouter({
       {name:'weapons',path:'/weapons',component:WeaponsList},
       {name:'equips',path:'/equips',component:EquipsList},
       {name:'heroesadd',path:'/heroes/add',component:HoreAdd},
+      //添加动态路由id
+      {name:'heroesedit',path:'/heroes/edit/:id',component:HoreEdit},
 
   ]
 })
