@@ -18,7 +18,10 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   //精确高亮显示样式
   // https://router.vuejs.org/zh/api/#exact-active-class
-  linkExactActiveClass: 'active',
+  // linkExactActiveClass: 'active',
+
+    // 当url中的路由地址，包含a标签的href的路由地址的时候，添加类样式
+    linkActiveClass: 'active',
   //配置路由规则
   routes:[
       {name:'home',path:'/',redirect:'/heroes'},
