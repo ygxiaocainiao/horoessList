@@ -8,6 +8,8 @@ import EquipsList from './views/equips/EquipsList.vue'
 // 导入 HoreList 组件
 import WeaponsList from './views/weapons/WeaponsList.vue'
 
+//导入 HoreAdd 组件
+import HoreAdd from './views/heroes/HoreAdd.vue'
 // 导入 vue-router
 import VueRouter from 'vue-router'
 //配置vue的插件vue-router
@@ -23,6 +25,8 @@ const router = new VueRouter({
       {name:'heroes',path:'/heroes',component:HoreList},
       {name:'weapons',path:'/weapons',component:WeaponsList},
       {name:'equips',path:'/equips',component:EquipsList},
+      {name:'heroesadd',path:'/heroes/add',component:HoreAdd},
+
   ]
 })
 
