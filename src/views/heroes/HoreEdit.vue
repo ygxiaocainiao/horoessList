@@ -13,7 +13,7 @@
                 <option value="女">女</option>
             </select>
           </div>
-          <button type="button" class="btn btn-success">提交</button>
+          <button @click="edit" type="button" class="btn btn-success">提交</button>
         </form>
       </div>
 </template>
@@ -50,6 +50,17 @@ export default {
             .catch((err)=>{
                 console.log('服务器错误'+err)
             })
+        },
+        edit () {
+           axios
+           .put(`http://localhost:3000/heroes/${this.id}`,this.formData)
+           .then((res)=>{
+               const {status} = res
+               if (status===200) {
+                   //修改成功跳转到英雄列表
+                   this.$router.push({name:'heroes'})
+               }
+           })
         }
         
     },
