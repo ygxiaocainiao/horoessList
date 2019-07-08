@@ -49,7 +49,7 @@ export default {
         //发送请求展示应英雄
        loadData () {
            this.axios
-           .get('http://localhost:3000/heroes')
+           .get('heroes')
            .then((res)=>{
             //    data数据 status http的状态码
                const {data,status} = res
@@ -69,7 +69,7 @@ export default {
                return
            }
            this.axios
-           .delete(`http://localhost:3000/heroes/${id}`)
+           .delete(`heroes/${id}`)
            .then((res)=>{
                const {status} = res
                if (status===200) {

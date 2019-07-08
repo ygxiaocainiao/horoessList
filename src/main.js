@@ -8,8 +8,12 @@ Vue.config.productionTip = false
 
 //导入axios模块
 import axios from 'axios'
+// 配置baseURL， 将来axios会自动把 baseURL和 get(url) 中的路径拼接起来
+axios.defaults.baseURL='http://localhost:3000/'
 //把axis方法添加到vue原型上
 Vue.prototype.axios = axios
+
+
 
 //导入路由模块
 import router from './router'

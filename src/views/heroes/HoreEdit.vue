@@ -39,7 +39,7 @@ export default {
     methods: {
         loadDataById () {
             this.axios
-            .get(`http://localhost:3000/heroes/${this.id}`)
+            .get(`heroes/${this.id}`)
             .then((res)=>{
                 const {data,status} = res
                 // console.log(res)
@@ -53,7 +53,7 @@ export default {
         },
         edit () {
             this.axios
-           .put(`http://localhost:3000/heroes/${this.id}`,this.formData)
+           .put(`heroes/${this.id}`,this.formData)
            .then((res)=>{
                const {status} = res
                if (status===200) {
