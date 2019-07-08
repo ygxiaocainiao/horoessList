@@ -214,8 +214,38 @@
 </template>
 
 <script>
+//导入axios
+import axios from 'axios'
 export default {
-
+    data () {
+        return {
+            list:[]
+        }
+    },
+    //组件加载完后执行
+    mounted () {
+        //调用方法发送请求
+        loadData()
+    },
+    methods:{
+        //发送请求
+       loadData () {
+           axios
+           .get('http://localhost:3000/heroes')
+           .then((res)=>{
+            //    data数据 status http的状态码
+               const {data,status} = res
+               if (status===200) {
+                   this.list=data
+               }else {
+                   alert('获取失败')
+               }
+           })
+           .catch(err=>{
+               alert('服务器异常'+err)
+           }) 
+       }
+    }
 }
 </script>
 
