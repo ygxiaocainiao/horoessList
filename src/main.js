@@ -7,6 +7,10 @@ import './assets/css/index.css'
 Vue.config.productionTip = false
 // 导入 HoreList 组件
 import HoreList from './views/heroes/HoreList.vue'
+// 导入 EquipsList 组件
+import EquipsList from './views/equips/EquipsList.vue'
+// 导入 HoreList 组件
+import WeaponsList from './views/weapons/WeaponsList.vue'
 
 // 导入 vue-router
 import VueRouter from 'vue-router'
@@ -16,8 +20,10 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   //配置路由规则
   routes:[
-      {name:'home',path:'/',redirect:'heroes'},
+      {name:'home',path:'/',redirect:'/heroes'},
       {name:'heroes',path:'/heroes',component:HoreList},
+      {name:'weapons',path:'/weapons',component:WeaponsList},
+      {name:'equips',path:'/equips',component:EquipsList},
   ]
 })
 
